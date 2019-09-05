@@ -1,11 +1,21 @@
 package com.quoders.android.app.madridbus
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.appcompat.app.AppCompatActivity
+import android.util.Log
+import android.view.View
 import android.widget.TextView
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.quoders.android.app.madridbus.data.api.EmtService
+import dagger.android.support.DaggerAppCompatActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity(), CoroutineScope by MainScope() {
+
+    @Inject
+    lateinit var emtService: EmtService
 
     private lateinit var textMessage: TextView
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -33,5 +43,15 @@ class MainActivity : AppCompatActivity() {
 
         textMessage = findViewById(R.id.message)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+    }
+
+    fun onLoginClick(view: View) {
+        launch {
+            //val login = emtService.login("david.guerrero@quoders.com", "oisi28Emt$")
+            //Log.i("MainActivity", login.body()?.data.toString())
+            val lines = emtService.getLines("20190904", "e8b786c3-952e-4803-96e1-379a5d6189fd")
+            Log.i("MainActivity", lines.body()?.data.toString())
+            //e8b786c3-952e-4803-96e1-379a5d6189fd
+        }
     }
 }
