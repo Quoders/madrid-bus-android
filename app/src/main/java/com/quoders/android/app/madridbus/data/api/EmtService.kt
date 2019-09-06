@@ -1,7 +1,7 @@
 package com.quoders.android.app.madridbus.data.api
 
-import com.quoders.android.app.madridbus.data.model.lines.LinesApiData
-import com.quoders.android.app.madridbus.data.model.login.LoginApiData
+import com.quoders.android.app.madridbus.data.api.lines.LinesApiData
+import com.quoders.android.app.madridbus.data.api.login.LoginApiData
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Header
