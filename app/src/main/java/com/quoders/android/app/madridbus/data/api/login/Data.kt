@@ -1,4 +1,4 @@
-package com.quoders.android.app.madridbus.data.model.login
+package com.quoders.android.app.madridbus.data.api.login
 
 
 import com.squareup.moshi.Json
