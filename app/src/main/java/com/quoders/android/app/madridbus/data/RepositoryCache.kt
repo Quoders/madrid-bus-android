@@ -1,16 +1,16 @@
 package com.quoders.android.app.madridbus.data
 
-class RepositoryCache {
+import com.quoders.android.app.madridbus.core.PreferencesHelper
+import javax.inject.Inject
+
+class RepositoryCache @Inject constructor(private val preferencesHelper: PreferencesHelper) {
 
     private val CACHE_EXPIRATION_TIME = (60 * 10 * 1000).toLong()
 
     fun isExpired(): Boolean {
         val currentTime = System.currentTimeMillis()
-        val lastUpdate = this.getLastCachedTimeMillis()
+        val lastUpdate = preferencesHelper.lastCacheTime
         return currentTime - lastUpdate > CACHE_EXPIRATION_TIME
     }
 
-    private fun getLastCachedTimeMillis(): Long {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 }

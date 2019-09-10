@@ -1,5 +1,8 @@
 package com.quoders.android.app.madridbus.data.di
 
+import com.quoders.android.app.madridbus.data.Repository
+import com.quoders.android.app.madridbus.data.RepositoryCache
+import com.quoders.android.app.madridbus.data.RepositoryImpl
 import com.quoders.android.app.madridbus.data.api.EmtService
 import com.quoders.android.app.madridbus.data.api.EmtService.Companion.EMT_ENDPOINT
 import dagger.Module
@@ -12,7 +15,7 @@ import javax.inject.Singleton
 
 
 @Module
-class EmtDataModule {
+class DataModule {
 
     @Provides
     @Singleton
@@ -28,5 +31,14 @@ class EmtDataModule {
             .client(client)
             .build()
             .create(EmtService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun providesRepository(
+        repositoryCache: RepositoryCache,
+        emtService: EmtService
+    ): Repository {
+        return RepositoryImpl(repositoryCache, emtService)
     }
 }
