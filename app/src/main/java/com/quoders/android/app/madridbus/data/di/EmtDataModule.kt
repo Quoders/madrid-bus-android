@@ -8,12 +8,14 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import javax.inject.Singleton
 
 
 @Module
 class EmtDataModule {
 
     @Provides
+    @Singleton
     fun provideDesignerNewsService(): EmtService {
 
         val interceptor = HttpLoggingInterceptor()
