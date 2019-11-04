@@ -4,12 +4,17 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.quoders.android.app.madridbus.domain.lines.LinesRepository
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 class MainActivity : DaggerAppCompatActivity(), CoroutineScope by MainScope() {
+
+    @Inject
+    lateinit var linesRepository: LinesRepository
 
     private lateinit var textMessage: TextView
     private val onNavigationItemSelectedListener =
@@ -44,8 +49,10 @@ class MainActivity : DaggerAppCompatActivity(), CoroutineScope by MainScope() {
         launch {
             //val login = emtService.login("david.guerrero@quoders.com", "oisi28Emt$")
             //val lines = emtService.getLines("20190904", "e8b786c3-952e-4803-96e1-379a5d6189fd")
+            val allLines = linesRepository.getAllLines()
+            if(allLines != null) {
 
-
+            }
         }
     }
 }

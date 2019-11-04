@@ -1,10 +1,10 @@
-package com.quoders.android.app.madridbus.data
+package com.quoders.android.app.madridbus.domain.lines
 
 import com.quoders.android.app.madridbus.data.model.LineEntity
 import com.quoders.android.app.madridbus.data.model.RouteEntity
 import com.quoders.android.app.madridbus.data.model.StopEntity
 
-interface Repository {
+interface LinesRepository {
 
     suspend fun getAllLines(): List<LineEntity>
 

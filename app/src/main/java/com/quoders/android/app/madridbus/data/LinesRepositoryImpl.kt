@@ -5,12 +5,13 @@ import com.quoders.android.app.madridbus.data.api.EmtService
 import com.quoders.android.app.madridbus.data.model.LineEntity
 import com.quoders.android.app.madridbus.data.model.RouteEntity
 import com.quoders.android.app.madridbus.data.model.StopEntity
+import com.quoders.android.app.madridbus.domain.lines.LinesRepository
 import javax.inject.Inject
 
-class RepositoryImpl @Inject constructor(
-    val repositoryCache: RepositoryCache,
-    val emtService: EmtService
-) : Repository {
+class LinesRepositoryImpl @Inject constructor(
+    private val repositoryCache: RepositoryCache,
+    private val emtService: EmtService
+) : LinesRepository {
 
     override suspend fun getAllLines(): List<LineEntity> {
         if (repositoryCache.isExpired()) {

@@ -8,7 +8,7 @@ import dagger.android.ContributesAndroidInjector
 import javax.inject.Singleton
 
 @Module
-abstract class AndroidInjectBuilder {
+abstract class MainActivityModule {
     @Singleton
     @ContributesAndroidInjector(modules = [DataModule::class, CoreModule::class])
     abstract fun bindMainActivity(): MainActivity

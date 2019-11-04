@@ -1,7 +1,8 @@
-package com.quoders.android.app.madridbus.data.local
+package com.quoders.android.app.madridbus.data.local.lines
 
 import androidx.room.Dao
 import androidx.room.Query
+import com.quoders.android.app.madridbus.data.local.lines.LineEntity
 
 @Dao
 interface LinesDao {
