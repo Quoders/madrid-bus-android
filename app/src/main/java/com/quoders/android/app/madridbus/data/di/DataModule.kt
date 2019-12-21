@@ -1,10 +1,11 @@
 package com.quoders.android.app.madridbus.data.di
 
-import com.quoders.android.app.madridbus.domain.lines.LinesRepository
+import com.quoders.android.app.madridbus.BuildConfig
 import com.quoders.android.app.madridbus.data.RepositoryCache
-import com.quoders.android.app.madridbus.data.LinesRepositoryImpl
-import com.quoders.android.app.madridbus.data.api.EmtService
-import com.quoders.android.app.madridbus.data.api.EmtService.Companion.EMT_ENDPOINT
+import com.quoders.android.app.madridbus.data.lines.LinesRepositoryImpl
+import com.quoders.android.app.madridbus.data.lines.remote.EmtService
+import com.quoders.android.app.madridbus.data.lines.remote.EmtService.Companion.EMT_ENDPOINT
+import com.quoders.android.app.madridbus.domain.LinesRepository
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -19,14 +20,17 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideDesignerNewsService(): EmtService {
+    fun provideEmtService(url: String): EmtService {
 
         val interceptor = HttpLoggingInterceptor()
-        interceptor.level = HttpLoggingInterceptor.Level.BODY
+
+        interceptor.level = if (BuildConfig.DEBUG)
+            HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
+
         val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
 
         return Retrofit.Builder()
-            .baseUrl(EMT_ENDPOINT)
+            .baseUrl(url)
             .addConverterFactory(MoshiConverterFactory.create())
             .client(client)
             .build()
@@ -35,10 +39,13 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun providesRepository(
+    fun provideRepository(
         repositoryCache: RepositoryCache,
         emtService: EmtService
     ): LinesRepository {
-        return LinesRepositoryImpl(repositoryCache, emtService)
+        return LinesRepositoryImpl(
+            repositoryCache,
+            emtService
+        )
     }
 }

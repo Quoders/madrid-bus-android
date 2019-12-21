@@ -1,6 +1,6 @@
 package com.quoders.android.app.madridbus.di
 
-import com.quoders.android.app.madridbus.MainActivity
+import com.quoders.android.app.madridbus.ui.MainActivity
 import com.quoders.android.app.madridbus.core.CoreModule
 import com.quoders.android.app.madridbus.data.di.DataModule
 import dagger.Module

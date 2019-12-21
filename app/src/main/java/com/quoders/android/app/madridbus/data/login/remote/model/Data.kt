@@ -1,6 +1,7 @@
-package com.quoders.android.app.madridbus.data.api.login
+package com.quoders.android.app.madridbus.data.login.remote.model
 
 
+import com.quoders.android.app.madridbus.data.login.remote.model.ApiCounter
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 

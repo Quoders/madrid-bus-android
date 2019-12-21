@@ -1,4 +1,4 @@
-package com.quoders.android.app.madridbus.data.api.lines
+package com.quoders.android.app.madridbus.data.lines.remote.model
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

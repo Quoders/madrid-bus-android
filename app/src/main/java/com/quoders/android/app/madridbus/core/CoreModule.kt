@@ -1,7 +1,7 @@
 package com.quoders.android.app.madridbus.core
 
 import android.content.Context
-import com.quoders.android.app.madridbus.MainActivity
+import com.quoders.android.app.madridbus.ui.MainActivity
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

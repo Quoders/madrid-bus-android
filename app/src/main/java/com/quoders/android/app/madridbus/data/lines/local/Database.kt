@@ -1,9 +1,8 @@
-package com.quoders.android.app.madridbus.data.local
+package com.quoders.android.app.madridbus.data.lines.local
 
 import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.quoders.android.app.madridbus.data.local.lines.LinesDao
 
 abstract class Database : RoomDatabase() {
 

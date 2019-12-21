@@ -1,10 +1,11 @@
-package com.quoders.android.app.madridbus
+package com.quoders.android.app.madridbus.ui
 
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.quoders.android.app.madridbus.domain.lines.LinesRepository
+import com.quoders.android.app.madridbus.R
+import com.quoders.android.app.madridbus.domain.LinesRepository
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope

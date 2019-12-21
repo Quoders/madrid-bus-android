@@ -1,4 +1,4 @@
-package com.quoders.android.app.madridbus.data.local.lines
+package com.quoders.android.app.madridbus.data.lines.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
