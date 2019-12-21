@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation_graph"
+    app:startDestination="@id/navigation_fragment_around">
+
+    <fragment
+        android:id="@+id/navigation_fragment_around"
+        android:name="com.quoders.android.app.madridbus.ui.around.AroundMeFragment"
+        android:label="around_me_fragment"
+        tools:layout="@layout/around_me_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_fragment_lines"
+        android:name="com.quoders.android.app.madridbus.ui.lines.LinesFragment"
+        android:label="lines_fragment"
+        tools:layout="@layout/lines_fragment" />
+</navigation>
