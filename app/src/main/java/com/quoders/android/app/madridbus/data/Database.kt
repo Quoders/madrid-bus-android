@@ -1,8 +1,9 @@
-package com.quoders.android.app.madridbus.data.lines.local
+package com.quoders.android.app.madridbus.data
 
 import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.quoders.android.app.madridbus.data.local.LinesDao
 
 abstract class Database : RoomDatabase() {
 
@@ -15,7 +16,8 @@ abstract class Database : RoomDatabase() {
 
         fun getDatabase(context: Context): Database {
 
-            val tempInstance = INSTANCE
+            val tempInstance =
+                INSTANCE
             if (tempInstance != null) {
                 return tempInstance
             }

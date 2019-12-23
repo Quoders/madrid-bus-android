@@ -1,10 +1,9 @@
 package com.quoders.android.app.madridbus.data.di
 
 import com.quoders.android.app.madridbus.BuildConfig
+import com.quoders.android.app.madridbus.data.LinesRepositoryImpl
 import com.quoders.android.app.madridbus.data.RepositoryCache
-import com.quoders.android.app.madridbus.data.lines.LinesRepositoryImpl
-import com.quoders.android.app.madridbus.data.lines.remote.EmtService
-import com.quoders.android.app.madridbus.data.lines.remote.EmtService.Companion.EMT_ENDPOINT
+import com.quoders.android.app.madridbus.data.remote.EmtService
 import com.quoders.android.app.madridbus.domain.LinesRepository
 import dagger.Module
 import dagger.Provides
@@ -39,13 +38,9 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideRepository(
+    fun provideLinesRepository(
         repositoryCache: RepositoryCache,
         emtService: EmtService
-    ): LinesRepository {
-        return LinesRepositoryImpl(
-            repositoryCache,
-            emtService
-        )
-    }
+    ): LinesRepository =
+        LinesRepositoryImpl(repositoryCache, emtService)
 }

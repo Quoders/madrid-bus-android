@@ -1,8 +1,8 @@
-package com.quoders.android.app.madridbus.data.lines
+package com.quoders.android.app.madridbus.data
 
 import com.quoders.android.app.madridbus.core.getTodayInEmtServiceFormat
 import com.quoders.android.app.madridbus.data.RepositoryCache
-import com.quoders.android.app.madridbus.data.lines.remote.EmtService
+import com.quoders.android.app.madridbus.data.remote.EmtService
 import com.quoders.android.app.madridbus.domain.LinesRepository
 import com.quoders.android.app.madridbus.domain.model.Line
 import com.quoders.android.app.madridbus.domain.model.Route

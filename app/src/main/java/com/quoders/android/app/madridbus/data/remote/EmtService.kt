@@ -1,8 +1,5 @@
-package com.quoders.android.app.madridbus.data.lines.remote
+package com.quoders.android.app.madridbus.data.remote
 
-import com.quoders.android.app.madridbus.data.lines.remote.model.LinesApiData
-import com.quoders.android.app.madridbus.data.login.remote.model.LoginApiData
-import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Path
@@ -14,13 +11,21 @@ interface EmtService {
     suspend fun login(
         @Header("email") email: String,
         @Header("password") password: String
-    ): Response<LoginApiData>
+    ): LoginApiData
 
     @GET("v1/transport/busemtmad/lines/info/{date}/")
     suspend fun getLines(
         @Path("date") fromDate: String,
         @Header("accessToken") userkey: String
-    ): Response<LinesApiData>
+    ): LinesApiData
+
+    @GET("v1/transport/busemtmad/stops/arroundxy/{latitude}/{longitude}/200")
+    suspend fun getStopsAroundMe(
+        @Path("latitude") latitude: Float,
+        @Path("longitude") longitude: Float,
+        @Header("accessToken") userkey: Float
+    ): AroundStopsApiData
+
 
     companion object {
         const val EMT_ENDPOINT = "https://openapi.emtmadrid.es/"
