@@ -16,4 +16,9 @@
         android:name="com.quoders.android.app.madridbus.ui.lines.LinesFragment"
         android:label="lines_fragment"
         tools:layout="@layout/lines_fragment" />
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.quoders.android.app.madridbus.ui.favorites.FavoritesFragment"
+        android:label="favorites_fragment"
+        tools:layout="@layout/favorites_fragment" />
 </navigation>
