@@ -7,7 +7,7 @@ import retrofit2.http.Path
 
 interface EmtService {
 
-    @GET("v1/mobilitylabs/user/login/")
+    @GET(EMT_PATH_LOGIN)
     suspend fun login(
         @Header("email") email: String,
         @Header("password") password: String
@@ -21,13 +21,15 @@ interface EmtService {
 
     @GET("v1/transport/busemtmad/stops/arroundxy/{latitude}/{longitude}/200")
     suspend fun getStopsAroundMe(
-        @Path("latitude") latitude: Float,
-        @Path("longitude") longitude: Float,
-        @Header("accessToken") userkey: Float
+        @Path("latitude") latitude: Double,
+        @Path("longitude") longitude: Double,
+        @Header("accessToken") userkey: String
     ): AroundStopsApiData
 
 
     companion object {
         const val EMT_ENDPOINT = "https://openapi.emtmadrid.es/"
+
+        const val EMT_PATH_LOGIN = "v1/mobilitylabs/user/login/"
     }
 }

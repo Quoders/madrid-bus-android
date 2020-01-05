@@ -4,7 +4,7 @@ import com.quoders.android.app.madridbus.domain.model.Line
 import com.quoders.android.app.madridbus.domain.model.Route
 import com.quoders.android.app.madridbus.domain.model.Stop
 
-interface LinesRepository {
+interface ILinesRepository {
 
     suspend fun getAllLines(): List<Line>
 

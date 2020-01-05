@@ -152,7 +152,7 @@ class AroundMeFragment : Fragment(), OnMapReadyCallback {
 
     companion object {
         private const val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 0x0001
-        private const val DEFAULT_MAP_ZOOM = 18f
+        private const val DEFAULT_MAP_ZOOM = 17f
 
         fun newInstance() = AroundMeFragment()
     }

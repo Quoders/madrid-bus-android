@@ -1,6 +1,7 @@
-package com.quoders.android.app.madridbus.core
+package com.quoders.android.app.madridbus.core.di
 
 import android.content.Context
+import com.quoders.android.app.madridbus.core.PreferencesHelper
 import com.quoders.android.app.madridbus.ui.MainActivity
 import dagger.Module
 import dagger.Provides
@@ -15,5 +16,6 @@ class CoreModule {
 
     @Singleton
     @Provides
-    fun providePreferencesHelper(context: Context): PreferencesHelper = PreferencesHelper(context)
+    fun providePreferencesHelper(context: Context): PreferencesHelper =
+        PreferencesHelper(context)
 }
