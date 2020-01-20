@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.quoders.android.app.madridbus.core
+package com.quoders.android.app.madridbus.core.functional
 
 /**
  * Represents a value of one of two possible types (a disjoint union).
@@ -47,13 +47,15 @@ sealed class Either<out L, out R> {
      * Creates a Left type.
      * @see Left
      */
-    fun <L> left(a: L) = Either.Left(a)
+    fun <L> left(a: L) =
+        Left(a)
 
     /**
      * Creates a Left type.
      * @see Right
      */
-    fun <R> right(b: R) = Either.Right(b)
+    fun <R> right(b: R) =
+        Right(b)
 
     /**
      * Applies fnL if this is a Left or fnR if this is a Right.
@@ -81,7 +83,9 @@ fun <A, B, C> ((A) -> B).c(f: (B) -> C): (A) -> C = {
  */
 fun <T, L, R> Either<L, R>.flatMap(fn: (R) -> Either<L, T>): Either<L, T> =
     when (this) {
-        is Either.Left -> Either.Left(a)
+        is Either.Left -> Either.Left(
+            a
+        )
         is Either.Right -> fn(b)
     }
 

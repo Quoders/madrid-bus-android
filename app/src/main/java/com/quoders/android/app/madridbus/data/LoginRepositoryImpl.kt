@@ -1,9 +1,8 @@
 package com.quoders.android.app.madridbus.data
 
-import com.quoders.android.app.madridbus.core.Either
-import com.quoders.android.app.madridbus.core.Either.Left
-import com.quoders.android.app.madridbus.core.Either.Right
-import com.quoders.android.app.madridbus.core.Failure
+import com.quoders.android.app.madridbus.core.functional.Either
+import com.quoders.android.app.madridbus.core.functional.Either.Left
+import com.quoders.android.app.madridbus.core.functional.Failure
 import com.quoders.android.app.madridbus.data.failure.LoginFailure
 import com.quoders.android.app.madridbus.data.remote.EmtService
 import com.quoders.android.app.madridbus.domain.LoginRepository

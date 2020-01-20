@@ -1,4 +1,4 @@
-package com.quoders.android.app.madridbus.core
+package com.quoders.android.app.madridbus.core.functional
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
