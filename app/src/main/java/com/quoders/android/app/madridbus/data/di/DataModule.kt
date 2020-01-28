@@ -5,6 +5,7 @@ import com.quoders.android.app.madridbus.data.LinesRepositoryImpl
 import com.quoders.android.app.madridbus.data.LoginRepositoryImpl
 import com.quoders.android.app.madridbus.data.RepositoryCache
 import com.quoders.android.app.madridbus.data.remote.EmtService
+import com.quoders.android.app.madridbus.data.remote.EmtService.Companion.EMT_ENDPOINT
 import com.quoders.android.app.madridbus.domain.ILinesRepository
 import dagger.Module
 import dagger.Provides
@@ -20,7 +21,7 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideEmtService(url: String): EmtService {
+    fun provideEmtService(): EmtService {
 
         val interceptor = HttpLoggingInterceptor()
 
@@ -30,7 +31,7 @@ class DataModule {
         val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
 
         return Retrofit.Builder()
-            .baseUrl(url)
+            .baseUrl(EMT_ENDPOINT)
             .addConverterFactory(MoshiConverterFactory.create())
             .client(client)
             .build()
