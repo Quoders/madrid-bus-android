@@ -9,7 +9,7 @@ class LinesFragmentDirections private constructor() {
         val lineNumber: String,
         val lineName: String
     ) : NavDirections {
-        override fun getActionId(): Int = R.id.action_lineList_to_lineDetail
+        override fun getActionId(): Int = R.id.action_to_livenessEducationalGuidelineFragment
 
         override fun getArguments(): Bundle {
             val result = Bundle()

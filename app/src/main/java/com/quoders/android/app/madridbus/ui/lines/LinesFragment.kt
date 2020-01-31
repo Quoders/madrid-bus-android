@@ -42,7 +42,7 @@ class LinesFragment : InjectorBaseFragment() {
         }
 
         viewModel = viewModel(viewModelFactory) {
-            viewLifecycleOwner.observe(viewModel, {
+            viewLifecycleOwner.observe(lineList, {
                 it.fold(::showErrorState, ::showLineList)
             })
         }
