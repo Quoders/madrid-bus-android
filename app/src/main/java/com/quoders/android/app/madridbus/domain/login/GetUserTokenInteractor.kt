@@ -8,7 +8,7 @@ class GetUserTokenInteractor @Inject constructor(
 ) {
 
     suspend fun execute(): AuthToken {
-        val userToken = loginRepository.getUserToken("david.guerrero@quoders.com", "oisi28Emt\$")
+        val userToken = loginRepository.getUserToken("", "")
         return authTokenMapper.map(userToken)
     }
 }
