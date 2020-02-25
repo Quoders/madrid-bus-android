@@ -1,6 +1,7 @@
 package com.quoders.android.app.madridbus.ui.around
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
@@ -118,6 +119,7 @@ class AroundMeFragment : Fragment(), OnMapReadyCallback {
         }
     }
 
+    @SuppressLint("MissingPermission")
     private fun getDeviceLocation() {
 
         try {

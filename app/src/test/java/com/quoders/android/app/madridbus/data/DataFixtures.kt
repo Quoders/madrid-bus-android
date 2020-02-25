@@ -1,8 +1,8 @@
 package com.quoders.android.app.madridbus.data
 
-import com.quoders.android.app.madridbus.data.remote.ApiCounter
-import com.quoders.android.app.madridbus.data.remote.LoginApiData
-import com.quoders.android.app.madridbus.data.remote.UserData
+import com.quoders.android.app.madridbus.data.login.ApiCounter
+import com.quoders.android.app.madridbus.data.login.LoginApiData
+import com.quoders.android.app.madridbus.data.login.UserData
 
 object DataFixtures {
 
@@ -35,7 +35,7 @@ object DataFixtures {
         )
     }
 
-    fun getUserAuthFailedData() =
+    internal fun getUserAuthFailedData() =
         LoginApiData(
             code = "80",
             description = "Invalid user or password",
@@ -43,4 +43,11 @@ object DataFixtures {
             userData = emptyList()
         )
 
+    internal fun getServerErrorData() =
+        LoginApiData(
+            code = "",
+            description = "",
+            datetime = "",
+            userData = emptyList()
+        )
 }

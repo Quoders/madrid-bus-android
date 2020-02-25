@@ -1,6 +1,7 @@
-package com.quoders.android.app.madridbus.domain
+package com.quoders.android.app.madridbus.domain.lines
 
-import com.quoders.android.app.madridbus.domain.model.Line
+import com.quoders.android.app.madridbus.domain.lines.ILinesRepository
+import com.quoders.android.app.madridbus.domain.lines.Line
 import javax.inject.Inject
 
 class GetAllLinesInteractor @Inject constructor(private val linesRepository: ILinesRepository) {

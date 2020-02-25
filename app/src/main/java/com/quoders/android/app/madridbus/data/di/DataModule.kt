@@ -1,12 +1,12 @@
 package com.quoders.android.app.madridbus.data.di
 
 import com.quoders.android.app.madridbus.BuildConfig
-import com.quoders.android.app.madridbus.data.LinesRepositoryImpl
-import com.quoders.android.app.madridbus.data.LoginRepositoryImpl
+import com.quoders.android.app.madridbus.data.lines.LinesRepositoryImpl
+import com.quoders.android.app.madridbus.data.login.LoginRepositoryImpl
 import com.quoders.android.app.madridbus.data.RepositoryCache
-import com.quoders.android.app.madridbus.data.remote.EmtService
-import com.quoders.android.app.madridbus.data.remote.EmtService.Companion.EMT_ENDPOINT
-import com.quoders.android.app.madridbus.domain.ILinesRepository
+import com.quoders.android.app.madridbus.data.EmtService
+import com.quoders.android.app.madridbus.data.EmtService.Companion.EMT_ENDPOINT
+import com.quoders.android.app.madridbus.domain.lines.ILinesRepository
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -45,5 +45,9 @@ class DataModule {
         emtService: EmtService,
         loginRepository: LoginRepositoryImpl
     ): ILinesRepository =
-        LinesRepositoryImpl(repositoryCache, loginRepository, emtService)
+        LinesRepositoryImpl(
+            repositoryCache,
+            loginRepository,
+            emtService
+        )
 }

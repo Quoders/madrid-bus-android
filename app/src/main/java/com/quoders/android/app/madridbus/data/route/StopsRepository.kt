@@ -1,11 +1,10 @@
-package com.quoders.android.app.madridbus.data
+package com.quoders.android.app.madridbus.data.route
 
 import com.google.android.gms.maps.model.LatLng
 import com.quoders.android.app.madridbus.core.functional.Failure
-import com.quoders.android.app.madridbus.data.local.StopEntity
-import com.quoders.android.app.madridbus.data.mapper.StopMapper
-import com.quoders.android.app.madridbus.data.remote.EmtService
-import com.quoders.android.app.madridbus.domain.IStopsRespository
+import com.quoders.android.app.madridbus.data.login.LoginRepositoryImpl
+import com.quoders.android.app.madridbus.data.EmtService
+import com.quoders.android.app.madridbus.domain.route.IStopsRespository
 import javax.inject.Inject
 
 class StopsRepository @Inject constructor(

@@ -1,10 +1,12 @@
-package com.quoders.android.app.madridbus.data
+package com.quoders.android.app.madridbus.data.lines
 
-import com.quoders.android.app.madridbus.data.remote.EmtService
-import com.quoders.android.app.madridbus.domain.ILinesRepository
-import com.quoders.android.app.madridbus.domain.model.Line
-import com.quoders.android.app.madridbus.domain.model.Route
-import com.quoders.android.app.madridbus.domain.model.Stop
+import com.quoders.android.app.madridbus.data.RepositoryCache
+import com.quoders.android.app.madridbus.data.login.LoginRepositoryImpl
+import com.quoders.android.app.madridbus.data.EmtService
+import com.quoders.android.app.madridbus.domain.lines.ILinesRepository
+import com.quoders.android.app.madridbus.domain.lines.Line
+import com.quoders.android.app.madridbus.domain.route.Route
+import com.quoders.android.app.madridbus.domain.route.Stop
 import javax.inject.Inject
 
 class LinesRepositoryImpl @Inject constructor(

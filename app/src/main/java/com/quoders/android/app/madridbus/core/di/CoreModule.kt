@@ -2,7 +2,7 @@ package com.quoders.android.app.madridbus.core.di
 
 import android.content.Context
 import com.quoders.android.app.madridbus.core.PreferencesHelper
-import com.quoders.android.app.madridbus.ui.MainActivity
+import com.quoders.android.app.madridbus.ui.home.MainActivity
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
