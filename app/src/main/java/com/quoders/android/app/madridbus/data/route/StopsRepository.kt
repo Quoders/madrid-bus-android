@@ -5,9 +5,8 @@ import com.quoders.android.app.madridbus.core.functional.Failure
 import com.quoders.android.app.madridbus.data.login.LoginRepositoryImpl
 import com.quoders.android.app.madridbus.data.EmtService
 import com.quoders.android.app.madridbus.domain.route.IStopsRespository
-import javax.inject.Inject
 
-class StopsRepository @Inject constructor(
+class StopsRepository constructor(
     private val emtService: EmtService,
     private val loginRepository: LoginRepositoryImpl,
     private val stopMapper: StopMapper

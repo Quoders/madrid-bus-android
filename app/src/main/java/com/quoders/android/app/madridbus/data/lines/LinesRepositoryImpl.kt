@@ -7,9 +7,8 @@ import com.quoders.android.app.madridbus.domain.lines.ILinesRepository
 import com.quoders.android.app.madridbus.domain.lines.Line
 import com.quoders.android.app.madridbus.domain.route.Route
 import com.quoders.android.app.madridbus.domain.route.Stop
-import javax.inject.Inject
 
-class LinesRepositoryImpl @Inject constructor(
+class LinesRepositoryImpl constructor(
     private val repositoryCache: RepositoryCache,
     private val loginRepository: LoginRepositoryImpl,
     private val emtService: EmtService

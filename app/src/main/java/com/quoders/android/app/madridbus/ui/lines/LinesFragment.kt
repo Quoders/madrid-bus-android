@@ -4,22 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+
 import com.quoders.android.app.madridbus.R
 import com.quoders.android.app.madridbus.core.functional.Failure
-import com.quoders.android.app.madridbus.core.functional.InjectorBaseFragment
-import com.quoders.android.app.madridbus.core.functional.observe
-import com.quoders.android.app.madridbus.core.functional.viewModel
 import kotlinx.android.synthetic.main.lines_fragment.*
-import javax.inject.Inject
 
-class LinesFragment : InjectorBaseFragment() {
+class LinesFragment : Fragment() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-
-    private lateinit var viewModel: LinesViewModel
+    private val viewModel by viewModels<LinesViewModel>()
     private val linesAdapter: LinesAdapter = LinesAdapter()
 
     override fun onCreateView(
@@ -35,17 +30,14 @@ class LinesFragment : InjectorBaseFragment() {
         recyclerViewLines.adapter = linesAdapter
 
         linesAdapter.setClickListener {
+/*
             val navDirections =
                 LinesFragmentDirections.actionAlbumListToAlbumDetail(it.name, it.number)
 
             findNavController().navigate(navDirections)
+*/
         }
 
-        viewModel = viewModel(viewModelFactory) {
-            viewLifecycleOwner.observe(lineList, {
-                it.fold(::showErrorState, ::showLineList)
-            })
-        }
     }
 
     private fun showLineList(list: List<LineViewData>) {

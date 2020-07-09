@@ -4,9 +4,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
-import javax.inject.Inject
 
-class EncryptedPreferences @Inject constructor(private val applicationContext: Context) {
+class EncryptedPreferences constructor(private val applicationContext: Context) {
 
     private var sharedPreferences: SharedPreferences? = null
 

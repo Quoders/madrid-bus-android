@@ -19,9 +19,10 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.quoders.android.app.madridbus.R
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
-
+@AndroidEntryPoint
 class AroundMeFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var viewModel: AroundMeViewModel

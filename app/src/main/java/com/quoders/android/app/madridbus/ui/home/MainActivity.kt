@@ -1,19 +1,15 @@
 package com.quoders.android.app.madridbus.ui.home
 
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.quoders.android.app.madridbus.R
-import com.quoders.android.app.madridbus.core.functional.observe
-import com.quoders.android.app.madridbus.core.functional.viewModel
-import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import javax.inject.Inject
 
-class MainActivity : DaggerAppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
-    @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     private lateinit var viewModel: HomeViewModel
@@ -24,8 +20,6 @@ class MainActivity : DaggerAppCompatActivity() {
 
         setupBottomNavigation()
 
-        viewModel = viewModel(viewModelFactory) {
-        }
     }
 
 

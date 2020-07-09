@@ -14,3 +14,4 @@ fun <T : Any, L : LiveData<T>> LifecycleOwner.observeOnce(liveData: L, body: (T)
             liveData.removeObserver(this)
         }
     })
+

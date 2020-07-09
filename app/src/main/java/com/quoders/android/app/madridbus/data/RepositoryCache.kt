@@ -1,9 +1,8 @@
 package com.quoders.android.app.madridbus.data
 
 import com.quoders.android.app.madridbus.core.PreferencesHelper
-import javax.inject.Inject
 
-class RepositoryCache @Inject constructor(private val preferencesHelper: PreferencesHelper) {
+class RepositoryCache constructor(private val preferencesHelper: PreferencesHelper) {
 
     fun isExpired(): Boolean {
         val currentTime = System.currentTimeMillis()
