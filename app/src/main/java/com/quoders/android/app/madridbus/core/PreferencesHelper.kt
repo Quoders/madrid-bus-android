@@ -2,8 +2,10 @@ package com.quoders.android.app.madridbus.core
 
 import android.content.Context
 import android.content.SharedPreferences
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
-class PreferencesHelper(context: Context) {
+class PreferencesHelper @Inject constructor(@ApplicationContext private val context: Context) {
 
     companion object {
         private val PREF_MADRID_BUS_PACKAGE_NAME = "com.quoders.android.app.madridbus"

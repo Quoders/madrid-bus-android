@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -19,14 +20,14 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.quoders.android.app.madridbus.R
+import com.quoders.android.app.madridbus.ui.lines.LinesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
 @AndroidEntryPoint
 class AroundMeFragment : Fragment(), OnMapReadyCallback {
 
-    private lateinit var viewModel: AroundMeViewModel
-
+    private val viewModel by viewModels<AroundMeViewModel>()
     private var locationPermissionGranted: Boolean = false
     private var googleMap: GoogleMap? = null
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
@@ -47,7 +48,6 @@ class AroundMeFragment : Fragment(), OnMapReadyCallback {
         val mapFragment =
             childFragmentManager.findFragmentById(R.id.mapAround) as SupportMapFragment
         mapFragment.getMapAsync(this)
-
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
