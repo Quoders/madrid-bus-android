@@ -1,8 +1,8 @@
 package com.quoders.android.app.madridbus.data
 
-import com.quoders.android.app.madridbus.data.login.ApiCounter
-import com.quoders.android.app.madridbus.data.login.LoginApiData
-import com.quoders.android.app.madridbus.data.login.UserData
+import com.quoders.android.app.madridbus.login.ApiCounter
+import com.quoders.android.app.madridbus.login.LoginApiData
+import com.quoders.android.app.madridbus.login.UserData
 
 object DataFixtures {
 

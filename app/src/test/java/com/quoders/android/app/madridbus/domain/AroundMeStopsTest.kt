@@ -2,11 +2,11 @@ package com.quoders.android.app.madridbus.domain
 
 import com.google.android.gms.maps.model.LatLng
 import com.nhaarman.mockitokotlin2.mock
-import com.quoders.android.app.madridbus.data.login.LoginRepositoryImpl
-import com.quoders.android.app.madridbus.data.route.StopsRepository
-import com.quoders.android.app.madridbus.data.route.StopMapper
+import com.quoders.android.app.madridbus.login.LoginRepositoryImpl
+import com.quoders.android.app.madridbus.route.StopsRepository
+import com.quoders.android.app.madridbus.route.StopMapper
 import com.quoders.android.app.madridbus.data.EmtService
-import com.quoders.android.app.madridbus.domain.route.IStopsRespository
+import com.quoders.android.app.madridbus.route.IStopsRespository
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertTrue
 import org.junit.Test

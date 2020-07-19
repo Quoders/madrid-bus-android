@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_fragment_around"
-        android:name="com.quoders.android.app.madridbus.ui.around.AroundMeFragment"
+        android:name="com.quoders.android.app.madridbus.aroundme.AroundMeFragment"
         android:label="around_me_fragment"
         tools:layout="@layout/around_me_fragment" />
 
     <fragment
         android:id="@+id/navigation_fragment_lines"
-        android:name="com.quoders.android.app.madridbus.ui.lines.LinesFragment"
+        android:name="com.quoders.android.app.madridbus.lines.LinesFragment"
         android:label="lines_fragment"
         tools:layout="@layout/lines_fragment">
         <action
@@ -24,13 +24,13 @@
 
     <fragment
         android:id="@+id/navigation_fragment_favorites"
-        android:name="com.quoders.android.app.madridbus.ui.favorites.FavoritesFragment"
+        android:name="com.quoders.android.app.madridbus.favorites.FavoritesFragment"
         android:label="favorites_fragment"
         tools:layout="@layout/favorites_fragment" />
 
     <fragment
         android:id="@+id/navigation_fragment_route"
-        android:name="com.quoders.android.app.madridbus.ui.route.RouteFragment"
+        android:name="com.quoders.android.app.madridbus.route.RouteFragment"
         android:label="route_fragment"
         tools:layout="@layout/route_fragment" />
 

@@ -3,10 +3,10 @@ package com.quoders.android.app.madridbus.di
 import com.quoders.android.app.madridbus.core.PreferencesHelper
 import com.quoders.android.app.madridbus.data.EmtService
 import com.quoders.android.app.madridbus.data.RepositoryCache
-import com.quoders.android.app.madridbus.data.lines.LinesRepositoryImpl
-import com.quoders.android.app.madridbus.data.login.LoginRepositoryImpl
-import com.quoders.android.app.madridbus.domain.lines.ILinesRepository
-import com.quoders.android.app.madridbus.domain.login.ILoginRepository
+import com.quoders.android.app.madridbus.lines.LinesRepositoryImpl
+import com.quoders.android.app.madridbus.login.LoginRepositoryImpl
+import com.quoders.android.app.madridbus.lines.ILinesRepository
+import com.quoders.android.app.madridbus.login.ILoginRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

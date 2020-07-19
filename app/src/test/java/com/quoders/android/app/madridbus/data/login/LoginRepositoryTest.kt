@@ -6,6 +6,8 @@ import com.quoders.android.app.madridbus.core.functional.Either.Right
 import com.quoders.android.app.madridbus.core.functional.Failure
 import com.quoders.android.app.madridbus.data.DataFixtures
 import com.quoders.android.app.madridbus.data.EmtService
+import com.quoders.android.app.madridbus.login.LoginFailure
+import com.quoders.android.app.madridbus.login.LoginRepositoryImpl
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
